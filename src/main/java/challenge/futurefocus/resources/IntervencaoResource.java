@@ -53,6 +53,7 @@ public class IntervencaoResource {
 
     //cria uma intervenção
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response criarIntervencao(Intervencao intervencao) {
         if (!service.validateIntervencao(intervencao)) {
             return Response.status(Response.Status.BAD_REQUEST)

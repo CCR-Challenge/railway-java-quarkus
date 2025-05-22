@@ -52,6 +52,7 @@ public class AlertaResource {
 
     //cadastra um alerta novo no sistema
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response criarAlerta(Alerta alerta) {
         if (!service.validateAlerta(alerta)) {
             return Response.status(Response.Status.BAD_REQUEST)

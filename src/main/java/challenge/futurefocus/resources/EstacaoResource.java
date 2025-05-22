@@ -38,6 +38,7 @@ public class EstacaoResource {
 
     //cadastra uma nova estação
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response cadastrar(Estacao estacao) {
         if (!service.validateEstacao(estacao)) {
             return Response.status(Response.Status.BAD_REQUEST)

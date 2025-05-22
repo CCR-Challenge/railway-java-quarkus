@@ -42,6 +42,8 @@ public class UsuarioResource {
 
     //cadastra um usuario novo
     @POST
+    @Path("/cadastrar")
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response cadastrarUsuario(Usuario usuario) {
         if (!service.validateUsuario(usuario)) {
             return Response.status(Response.Status.BAD_REQUEST)
